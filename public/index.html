@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proxy Pro</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/scram/scramjet.all.js"></script>
+<script src="/baremux/index.js"></script>
+<script src="/register-sw.js" defer></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<div class="tabbar" id="tabbar"><button class="newtab" id="newtab" title="تبويب جديد">+</button></div>
+<div class="toolbar">
+  <button class="ib" id="back" title="رجوع">→</button>
+  <button class="ib" id="fwd" title="تقدم">←</button>
+  <button class="ib" id="reload" title="تحديث">⟳</button>
+  <button class="ib" id="home" title="الرئيسية">⌂</button>
+  <input class="urlbox" id="url" placeholder="ابحث أو اكتب رابط" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <button class="ib" id="full" title="ملء الشاشة">⛶</button>
+</div>
+<div class="viewport" id="viewport">
+  <div class="home show" id="homeview">
+    <div class="hero">
+      <h1 class="logo">Proxy Pro</h1>
+      <p class="sub">تصفح بسرعة — يوتيوب وألعاب وبحث</p>
+      <form class="search" id="form">
+        <input id="q" placeholder="ابحث أو اكتب رابط موقع" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+        <button type="submit">اذهب</button>
+      </form>
+      <div class="engines" id="engines">
+        <label><input type="radio" name="eng" value="https://duckduckgo.com/?q=%s" checked><span>DuckDuckGo</span></label>
+        <label><input type="radio" name="eng" value="https://search.brave.com/search?q=%s"><span>Brave</span></label>
+        <label><input type="radio" name="eng" value="https://www.bing.com/search?q=%s"><span>Bing</span></label>
+        <label><input type="radio" name="eng" value="https://www.google.com/search?q=%s"><span>Google</span></label>
+      </div>
+    </div>
+    <div class="tiles">
+      <a class="tile" href="https://www.youtube.com/" data-go><i>▶️</i>YouTube</a>
+      <a class="tile" href="https://poki.com/" data-go><i>🎮</i>Poki</a>
+      <a class="tile" href="https://ar.wikipedia.org/" data-go><i>📚</i>ويكيبيديا</a>
+      <a class="tile" href="https://www.reddit.com/" data-go><i>💬</i>Reddit</a>
+      <a class="tile" href="https://www.twitch.tv/" data-go><i>📺</i>Twitch</a>
+      <a class="tile" href="https://github.com/" data-go><i>💻</i>GitHub</a>
+    </div>
+    <div class="msg" id="msg"></div>
+    <div class="foot"><span class="pill"><span class="dot" id="dot"></span><span id="status">جارٍ الفحص…</span></span><br><small id="env" style="direction:ltr;display:inline-block;margin-top:6px"></small></div>
+  </div>
+</div>
+</body>
+</html>
